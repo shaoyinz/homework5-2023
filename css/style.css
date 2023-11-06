@@ -1,4 +1,10 @@
-/* Default Mobile View*/
+/* Default Mobile View */
+body{
+    font-family: 'Poppins', sans-serif;
+    /*background-image: url("../images/concrete_seamless.png");*/
+    background: #f1f1f1 url("../images/concrete_seamless.png");
+}
+
 header{
     display: flex;
     flex-direction: column;
@@ -13,11 +19,13 @@ header{
     width: 100%;
 }
 
+/* Style the visited links just as the link */
 .nav_links a:link, a:visited{
     color: blue;
     text-decoration: underline;
 }
 
+/* Style the header directly located in card*/
 .card > header{
     width: 100%;
     background-color: #288088;
@@ -29,15 +37,15 @@ header{
 .pricing {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
     justify-content: space-around;
     align-items: center; /* so that the card elements will not have same height */
-  }
+}
   
 .card {
     display: flex;
     flex-direction: column;
-    border-radius: 50px 50px 0 0;
+    border-radius: 50px 50px 0 0; /* Make the top corners curved as the example*/
     flex: 0 0 450px;
     box-sizing: border-box; /* margin & padding included in width */
 }
@@ -55,12 +63,7 @@ header{
     width: 300px;
 }
 
-body{
-    font-family: 'Poppins', sans-serif;
-    /*background-image: url("../images/concrete_seamless.png");*/
-    background: #f1f1f1 url("../images/concrete_seamless.png");
-}
-
+/* Define an animation */
 @keyframes slidein {
     from {
         width: 25px;
@@ -78,6 +81,7 @@ body{
     margin: 0 auto;
 }
 
+/* Desktop View */
 @media screen and (min-width: 900px){
     header{
         flex-direction: row;
@@ -89,10 +93,6 @@ body{
         justify-content: space-between;
     }
 
-    #logo{
-        margin: 0;
-    }
-
     .card{
         flex: 0 0 275px;
     }
@@ -102,7 +102,7 @@ body{
     }
     
     body{
-        padding-top: 60px;
+        padding-top: 60px; /* So the top header will not cover other elements */
     }
 
     body > header{
