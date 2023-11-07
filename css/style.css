@@ -1,16 +1,19 @@
 /* Default Mobile View */
+/* Edit the body element to use the Poppins font (using Google fonts) with serif as a backup.  It should also use the image “concrete_seamless.png” as a background-image with a backup color of #f1f1f1.*/
 body{
     font-family: 'Poppins', sans-serif;
     /*background-image: url("../images/concrete_seamless.png");*/
     background: #f1f1f1 url("../images/concrete_seamless.png");
 }
 
+/*Style header*/
 header{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/*Style nav_links*/
 .nav_links{
     display: flex;
     flex-direction: column;
@@ -46,14 +49,14 @@ header{
     display: flex;
     flex-direction: column;
     border-radius: 50px 50px 0 0; /* Make the top corners curved as the example*/
-    flex: 0 0 450px;
+    flex: 0 1 450px;
     box-sizing: border-box; /* margin & padding included in width */
 }
 
 .gallery{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* The images can span to the second line */
     justify-content: space-around;
 }
 
@@ -78,7 +81,7 @@ header{
 #logo{
     display: inline-block;
     animation: slidein 5s ease-out;
-    margin: 0 auto;
+    margin: 0 auto; /* Default mobile view: center of the page*/
 }
 
 /* Desktop View */
@@ -88,13 +91,17 @@ header{
         justify-content: space-between;
     }
 
+    #logo{
+        margin: 0; /* Space in the left */
+    }
+
     .nav_links{
         flex-direction: row;
         justify-content: space-between;
     }
 
     .card{
-        flex: 0 0 275px;
+        flex: 0 1 275px;
     }
 
     .pricing{
@@ -110,6 +117,10 @@ header{
         width: 100%;
         top: 0;
     }
+    
+    .gallery{
+        justify-content: center;
+    }
 }
 
 @media (prefers-reduced-motion){
@@ -118,7 +129,7 @@ header{
     }
 }
 
-@media (orientation: portrait) {
+@media print and (orientation: portrait) {
     body{
         font-family: Arial, Helvetica;
         background: #f1f1f1;
@@ -127,21 +138,31 @@ header{
     body > header{
         flex-direction: column;
         align-items: center;
+        /*width: 100%;*/
+    }
+
+    nav{
         width: 100%;
     }
 
     .nav_links{
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
         width: 100%;
     }
 
+    .nav_item{
+        flex-grow: 1;
+        text-align: center;
+    }
+
     .pricing{
+        flex-wrap: nowrap;
         align-items: flex-end;
     }
 
     .card{
-        flex: 0 0 325px;
+        flex: 0 1 325px;
         border: 2px solid #45ADDD;
     }
     
